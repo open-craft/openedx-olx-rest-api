@@ -1,0 +1,14 @@
+[main]
+host = https://www.transifex.com
+
+[edx-platform.openedx-olx-rest-api]
+file_filter = openedx_olx_rest_api/conf/locale/<lang>/LC_MESSAGES/django.po
+source_file = openedx_olx_rest_api/conf/locale/en/LC_MESSAGES/django.po
+source_lang = en
+type = PO
+
+[edx-platform.openedx-olx-rest-api-js]
+file_filter = openedx_olx_rest_api/conf/locale/<lang>/LC_MESSAGES/djangojs.po
+source_file = openedx_olx_rest_api/conf/locale/en/LC_MESSAGES/djangojs.po
+source_lang = en
+type = PO

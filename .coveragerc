@@ -1,0 +1,10 @@
+[run]
+branch = True
+data_file = .coverage
+source=openedx_olx_rest_api
+omit =
+    test_settings
+    *migrations*
+    *admin.py
+    *static*
+    *templates*
