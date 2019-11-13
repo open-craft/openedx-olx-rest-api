@@ -19,8 +19,8 @@ from . import compat
 from .block_serializer import XBlockSerializer
 
 
+@api_view(['GET'])
 @view_auth_classes()
-@api_view()
 def get_block_olx(request, usage_key_str):
     """
     Given a modulestore XBlock usage ID (block-v1:...), get its OLX and a list
@@ -85,8 +85,8 @@ def get_block_olx(request, usage_key_str):
     return Response(result)
 
 
+@api_view(['GET'])
 @view_auth_classes()
-@api_view()
 def get_block_exportfs_file(request, usage_key_str, path):
     """
     Serve a static file that got added to the XBlock's export_fs during XBlock
