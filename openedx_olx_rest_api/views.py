@@ -71,7 +71,7 @@ def get_block_olx(request, usage_key_str):
 
         for asset_file in data.static_files:
             if asset_file.url:
-                url = asset_file.url
+                url = request.build_absolute_uri(asset_file.url)
             else:
                 # The file is not in GridFS so we don't have a URL for it; serve it
                 # via our own get_block_exportfs_file API endpoint.

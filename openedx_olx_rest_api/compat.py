@@ -20,8 +20,6 @@ import re
 
 import six
 
-from django.conf import settings
-
 LOG = logging.getLogger(__name__)
 
 
@@ -98,8 +96,6 @@ def collect_assets_from_text(text, course_id, include_content=False):
     except ImportError as exc:
         raise EdXPlatformImportError(exc)
 
-    studio_url = ("https" if settings.HTTPS == "on" else "http") + '://' + settings.CMS_BASE
-
     # Replace static urls like '/static/foo.png'
     static_paths = []
     # Drag-and-drop-v2 has
@@ -112,7 +108,7 @@ def collect_assets_from_text(text, course_id, include_content=False):
             path = path[8:]
         info = {
             'path': path,
-            'url': studio_url + '/' + six.text_type(
+            'url': '/' + six.text_type(
                 course_id.make_asset_key("asset", path)
             ),
         }
